@@ -2,268 +2,119 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Moodia · L’application qui prend soin de vous</title>
-    <meta name="description" content="Moodia : suivi émotionnel, méditations, journal, rappels. Disponible en ligne ou en application Windows. Gratuit, sécurisé, sans publicité intrusive.">
-    <meta property="og:title" content="Moodia – Bien-être accessible à tous">
-    <meta property="og:description" content="Prenez soin de vous avec Moodia. Essayez la version web directement dans votre navigateur, ou installez l’application Windows.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://app.moodia.xyz">
-    <meta property="og:image" content="https://app.moodia.xyz/og-image.jpg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moodia · Téléchargements</title>
+    <meta name="description" content="Téléchargez Moodia sur Windows, macOS, Android et bientôt iOS.">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(125deg, #f6fbf8 0%, #eaf4ef 100%);
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(145deg, #e9f3ee 0%, #dce9e2 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 2rem;
         }
-
-        /* Carte principale */
         .card {
-            max-width: 1200px;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.96);
-            backdrop-filter: blur(2px);
+            max-width: 1000px;
+            background: white;
             border-radius: 2.5rem;
-            box-shadow: 0 30px 55px rgba(0, 32, 0, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.8);
+            box-shadow: 0 25px 45px rgba(0,0,0,0.1);
             overflow: hidden;
-            transition: transform 0.2s ease;
+            transition: transform 0.2s;
         }
-
-        .card:hover {
-            transform: translateY(-3px);
-        }
-
-        /* En-tête */
-        .hero {
-            padding: 3rem 3rem 1.5rem;
+        .card:hover { transform: translateY(-4px); }
+        .header {
+            background: linear-gradient(125deg, #1a4630, #236b46);
+            padding: 2rem;
             text-align: center;
-        }
-
-        .logo-emoji {
-            font-size: 4.5rem;
-            display: inline-block;
-            margin-bottom: 0.5rem;
-        }
-
-        h1 {
-            font-size: 3.2rem;
-            font-weight: 800;
-            background: linear-gradient(115deg, #1e4b2e, #2d8a55);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            letter-spacing: -0.02em;
-        }
-
-        .slogan {
-            font-size: 1.3rem;
-            color: #2c6e46;
-            margin-top: 0.75rem;
-            font-weight: 500;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Grille des fonctionnalités */
-        .features-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.2rem;
-            justify-content: center;
-            margin: 2.5rem 0 2rem;
-        }
-
-        .feature-pill {
-            background: white;
-            padding: 0.7rem 1.5rem;
-            border-radius: 60px;
-            font-weight: 500;
-            color: #1f4d33;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            border: 1px solid #d1e6db;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
-            font-size: 0.95rem;
-        }
-
-        .feature-pill span {
-            font-size: 1.2rem;
-        }
-
-        /* Double call-to-action */
-        .cta-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.5rem;
-            margin: 2rem 0 1rem;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            padding: 1rem 2rem;
-            border-radius: 60px;
-            font-weight: 600;
-            font-size: 1rem;
-            text-decoration: none;
-            transition: all 0.2s;
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-primary {
-            background: linear-gradient(105deg, #1f9a57, #0f7842);
             color: white;
-            box-shadow: 0 8px 18px rgba(31, 154, 87, 0.25);
         }
-
-        .btn-primary:hover {
-            background: linear-gradient(105deg, #0f874a, #0a6336);
-            transform: scale(1.02);
-            box-shadow: 0 12px 24px rgba(31, 154, 87, 0.35);
-        }
-
-        .btn-secondary {
-            background: white;
-            color: #1f5c3e;
-            border: 1px solid #c2dbcE;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
-        }
-
-        .btn-secondary:hover {
-            background: #f0faf5;
-            border-color: #9accb2;
-            transform: scale(1.01);
-        }
-
-        /* Badge info */
-        .info-badge {
-            background: #eaf6f0;
-            margin: 1.5rem 2.5rem 2rem;
-            padding: 1.2rem;
-            border-radius: 1.5rem;
-            text-align: center;
-            color: #1f5437;
-            font-size: 0.85rem;
-            border: 1px solid #d0e6db;
+        .header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .platform-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 1.5rem;
+            padding: 2rem;
         }
-
-        .info-badge span {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-
-        /* Section mise en avant (optionnel) */
-        .highlight {
-            background: #fff9ef;
-            margin: 1rem 2rem;
-            padding: 1.2rem;
+        .platform-card {
+            background: #f8fcf9;
             border-radius: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-            font-size: 0.9rem;
-            color: #b5750e;
-            border: 1px solid #ffe1a0;
-        }
-
-        footer {
-            text-align: center;
             padding: 1.5rem;
-            font-size: 0.75rem;
-            color: #6f997f;
-            background: rgba(240, 248, 240, 0.6);
-            border-top: 1px solid #e0ede6;
-        }
-
-        footer a {
-            color: #2c6e46;
+            text-align: center;
+            width: 180px;
+            border: 1px solid #e0efe8;
+            transition: all 0.2s;
             text-decoration: none;
+            color: #1f5437;
         }
-
-        footer a:hover {
-            text-decoration: underline;
+        .platform-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.05);
+            border-color: #9accb2;
         }
-
-        /* Responsive */
+        .platform-icon { font-size: 3rem; margin-bottom: 0.5rem; }
+        .platform-name { font-weight: 700; font-size: 1.2rem; margin: 0.5rem 0; }
+        .platform-desc { font-size: 0.75rem; color: #5f8b74; }
+        .footer {
+            background: #f0f7f3;
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #466a51;
+        }
         @media (max-width: 700px) {
-            body { padding: 1rem; }
-            h1 { font-size: 2.4rem; }
-            .hero { padding: 2rem 1.5rem; }
-            .slogan { font-size: 1rem; }
-            .btn { padding: 0.75rem 1.5rem; font-size: 0.9rem; }
-            .feature-pill { padding: 0.5rem 1rem; font-size: 0.8rem; }
-            .info-badge { margin: 1rem; }
+            .platform-card { width: 140px; padding: 1rem; }
+            .platform-icon { font-size: 2.2rem; }
         }
     </style>
 </head>
 <body>
 <div class="card">
-    <div class="hero">
-        <div class="logo-emoji">🌿</div>
-        <h1>Moodia</h1>
-        <div class="slogan">
-            L’application qui vous aide à respirer, suivre et avancer — en toute simplicité.
+    <div class="header">
+        <h1>📥 Télécharger Moodia</h1>
+        <p>Disponible sur toutes vos plateformes</p>
+    </div>
+    <div class="platform-grid">
+        <!-- Windows -->
+        <a href="https://github.com/editionhorizonpositif-cpu/moodia-download/releases/download/v1.0.0/Moodia_Setup_1.0.0.exe" class="platform-card" download>
+            <div class="platform-icon">🪟</div>
+            <div class="platform-name">Windows</div>
+            <div class="platform-desc">10 / 11 (64-bit)</div>
+        </a>
+        <!-- macOS (à venir) -->
+        <div class="platform-card" style="opacity:0.6; cursor:not-allowed;">
+            <div class="platform-icon">🍎</div>
+            <div class="platform-name">macOS</div>
+            <div class="platform-desc">Bientôt disponible</div>
         </div>
-
-        <div class="features-grid">
-            <div class="feature-pill"><span>📊</span> Suivi émotionnel</div>
-            <div class="feature-pill"><span>🧘</span> Méditations guidées</div>
-            <div class="feature-pill"><span>📔</span> Journal intime</div>
-            <div class="feature-pill"><span>⏰</span> Rappels adaptés</div>
-            <div class="feature-pill"><span>🔒</span> Données locales</div>
-        </div>
-
-        <div class="cta-container">
-            <a href="https://app.moodia.xyz" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                🌐 Accéder à la version web
-            </a>
-            <a href="download.html" class="btn btn-primary">
-                ⬇️ Télécharger pour Windows
-            </a>
-        </div>
-
-        <div class="info-badge">
-            <span>📦 Version 1.0.0</span>
-            <span>💾 24 Mo</span>
-            <span>🪟 Windows 10 / 11 (64 bits)</span>
-            <span>🔒 Stockage local</span>
-        </div>
-
-        <div class="highlight">
-            ✨ Besoin d’utiliser Moodia immédiatement ? Essayez la <strong>version web</strong> – aucun téléchargement requis.
+        <!-- Android (APK) -->
+        <a href="#" class="platform-card" style="opacity:0.6; cursor:not-allowed;">
+            <div class="platform-icon">🤖</div>
+            <div class="platform-name">Android</div>
+            <div class="platform-desc">APK – bientôt</div>
+        </a>
+        <!-- iOS (à venir) -->
+        <div class="platform-card" style="opacity:0.6; cursor:not-allowed;">
+            <div class="platform-icon">📱</div>
+            <div class="platform-name">iOS</div>
+            <div class="platform-desc">Prochainement</div>
         </div>
     </div>
-
-    <footer>
-        © 2026 Horizon Positif, Inc. – Bien-être accessible à tous · 
-        <a href="mailto:contact@moodia.xyz">Contact</a> · 
-        <a href="#" target="_blank">Confidentialité</a>
-    </footer>
+    <div class="footer">
+        © 2026 Moodia – Téléchargements sécurisés via GitHub Releases
+    </div>
 </div>
+<script>
+    // Détection automatique de l'OS pour Windows uniquement pour l'instant
+    const userAgent = navigator.userAgent.toLowerCase();
+    if (userAgent.includes('win')) {
+        // Optionnel : mettre en surbrillance la carte Windows
+        const windowsCard = document.querySelector('a[href*="Moodia_Setup"]');
+        if (windowsCard) windowsCard.style.border = '2px solid #1f9a57';
+    }
+</script>
 </body>
 </html>
