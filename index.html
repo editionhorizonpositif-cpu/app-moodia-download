@@ -2,119 +2,164 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moodia · Téléchargements</title>
-    <meta name="description" content="Téléchargez Moodia sur Windows, macOS, Android et bientôt iOS.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Moodia · Téléchargements officiels</title>
+    <meta name="description" content="Téléchargez Moodia pour Windows, macOS, Android, iOS. Application de bien-être intuitive, gratuite et respectueuse.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(145deg, #e9f3ee 0%, #dce9e2 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(125deg, #f6fbf8 0%, #eaf4ef 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 2rem;
         }
-        .card {
-            max-width: 1000px;
-            background: white;
-            border-radius: 2.5rem;
-            box-shadow: 0 25px 45px rgba(0,0,0,0.1);
-            overflow: hidden;
-            transition: transform 0.2s;
+        .container {
+            max-width: 1300px;
+            width: 100%;
         }
-        .card:hover { transform: translateY(-4px); }
         .header {
-            background: linear-gradient(125deg, #1a4630, #236b46);
-            padding: 2rem;
             text-align: center;
-            color: white;
+            margin-bottom: 3rem;
         }
-        .header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-        .platform-grid {
+        .logo {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+        }
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(115deg, #1e4b2e, #2d8a55);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.02em;
+        }
+        .tagline {
+            font-size: 1.2rem;
+            color: #2c6e46;
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+        .platforms {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 1.5rem;
-            padding: 2rem;
+            gap: 2rem;
         }
         .platform-card {
-            background: #f8fcf9;
-            border-radius: 1.5rem;
-            padding: 1.5rem;
+            background: white;
+            border-radius: 2rem;
+            padding: 2rem 1.5rem;
             text-align: center;
-            width: 180px;
-            border: 1px solid #e0efe8;
-            transition: all 0.2s;
+            width: 220px;
+            transition: all 0.25s;
             text-decoration: none;
             color: #1f5437;
+            border: 1px solid #e0efe8;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
         }
         .platform-card:hover {
-            transform: scale(1.03);
-            box-shadow: 0 12px 20px rgba(0,0,0,0.05);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.08);
             border-color: #9accb2;
         }
-        .platform-icon { font-size: 3rem; margin-bottom: 0.5rem; }
-        .platform-name { font-weight: 700; font-size: 1.2rem; margin: 0.5rem 0; }
-        .platform-desc { font-size: 0.75rem; color: #5f8b74; }
-        .footer {
+        .platform-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        .platform-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0.5rem 0;
+        }
+        .platform-status {
+            font-size: 0.8rem;
+            color: #5f8b74;
             background: #f0f7f3;
-            padding: 1rem;
+            display: inline-block;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+        }
+        .platform-card.disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            filter: grayscale(0.1);
+        }
+        .platform-card.disabled:hover {
+            transform: none;
+            border-color: #e0efe8;
+        }
+        footer {
             text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
             font-size: 0.75rem;
-            color: #466a51;
+            color: #6f997f;
+            border-top: 1px solid #d8e8e0;
         }
         @media (max-width: 700px) {
-            .platform-card { width: 140px; padding: 1rem; }
-            .platform-icon { font-size: 2.2rem; }
+            body { padding: 1.5rem; }
+            h1 { font-size: 2rem; }
+            .platform-card { width: 160px; padding: 1.2rem; }
+            .platform-icon { font-size: 2.5rem; }
+            .platform-name { font-size: 1.2rem; }
         }
     </style>
 </head>
 <body>
-<div class="card">
+<div class="container">
     <div class="header">
-        <h1>📥 Télécharger Moodia</h1>
-        <p>Disponible sur toutes vos plateformes</p>
+        <div class="logo">🌿</div>
+        <h1>Moodia</h1>
+        <div class="tagline">Bien-être accessible à tous, sur tous vos écrans</div>
     </div>
-    <div class="platform-grid">
-        <!-- Windows -->
-        <a href="https://github.com/editionhorizonpositif-cpu/moodia-download/releases/download/v1.0.0/Moodia_Setup_1.0.0.exe" class="platform-card" download>
+
+    <div class="platforms">
+        <!-- Windows (lien vers download.html) -->
+        <a href="download.html" class="platform-card">
             <div class="platform-icon">🪟</div>
             <div class="platform-name">Windows</div>
-            <div class="platform-desc">10 / 11 (64-bit)</div>
+            <div class="platform-status">Version 1.0.0</div>
         </a>
-        <!-- macOS (à venir) -->
-        <div class="platform-card" style="opacity:0.6; cursor:not-allowed;">
+
+        <!-- macOS (bientôt) -->
+        <div class="platform-card disabled">
             <div class="platform-icon">🍎</div>
             <div class="platform-name">macOS</div>
-            <div class="platform-desc">Bientôt disponible</div>
+            <div class="platform-status">Bientôt disponible</div>
         </div>
-        <!-- Android (APK) -->
-        <a href="#" class="platform-card" style="opacity:0.6; cursor:not-allowed;">
+
+        <!-- Android (bientôt) -->
+        <div class="platform-card disabled">
             <div class="platform-icon">🤖</div>
             <div class="platform-name">Android</div>
-            <div class="platform-desc">APK – bientôt</div>
-        </a>
-        <!-- iOS (à venir) -->
-        <div class="platform-card" style="opacity:0.6; cursor:not-allowed;">
+            <div class="platform-status">Bientôt disponible</div>
+        </div>
+
+        <!-- iOS (bientôt) -->
+        <div class="platform-card disabled">
             <div class="platform-icon">📱</div>
             <div class="platform-name">iOS</div>
-            <div class="platform-desc">Prochainement</div>
+            <div class="platform-status">Bientôt disponible</div>
+        </div>
+
+        <!-- Linux (optionnel) -->
+        <div class="platform-card disabled">
+            <div class="platform-icon">🐧</div>
+            <div class="platform-name">Linux</div>
+            <div class="platform-status">En projet</div>
         </div>
     </div>
-    <div class="footer">
-        © 2026 Moodia – Téléchargements sécurisés via GitHub Releases
-    </div>
+
+    <footer>
+        © 2026 Horizon Positif, Inc. · Téléchargements sécurisés via GitHub Releases
+    </footer>
 </div>
-<script>
-    // Détection automatique de l'OS pour Windows uniquement pour l'instant
-    const userAgent = navigator.userAgent.toLowerCase();
-    if (userAgent.includes('win')) {
-        // Optionnel : mettre en surbrillance la carte Windows
-        const windowsCard = document.querySelector('a[href*="Moodia_Setup"]');
-        if (windowsCard) windowsCard.style.border = '2px solid #1f9a57';
-    }
-</script>
 </body>
 </html>
