@@ -375,7 +375,7 @@ body{
             <a
   href="https://github.com/editionhorizonpositif-cpu/moodia-download/releases/download/v1.0.0/Moodia_Setup_1.0.0.exe"
   class="download-btn"
-  onclick="trackMoodiaDownload('windows', '1.0.0', 'Moodia_Setup_1.0.0.exe')">
+  onclick="return trackMoodiaDownload(event, this, 'windows', '1.0.0', 'Moodia_Setup_1.0.0.exe')">
 
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
                     <path d="M12 4V16" stroke="white" stroke-width="2"/>
@@ -481,22 +481,36 @@ body{
 
 </div>
     <script>
-function trackMoodiaDownload(platform, version, fileName) {
+function trackMoodiaDownload(event, link, platform, version, fileName) {
+  event.preventDefault();
+
+  var downloadUrl = link.href;
+
   if (typeof gtag === 'function') {
-    gtag('event', 'download_moodia', {
+    gtag('event', 'download_windows', {
+      platform: platform,
+      version: version,
+      file_name: fileName,
+      event_callback: function () {
+        window.location.href = downloadUrl;
+      },
+      event_timeout: 1000
+    });
+  }
+
+  if (window.va) {
+    window.va('event', 'download_windows', {
       platform: platform,
       version: version,
       file_name: fileName
     });
   }
 
-  if (window.va) {
-    window.va('event', 'download_moodia', {
-      platform: platform,
-      version: version,
-      file_name: fileName
-    });
-  }
+  setTimeout(function () {
+    window.location.href = downloadUrl;
+  }, 1200);
+
+  return false;
 }
 </script>
 
