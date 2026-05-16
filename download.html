@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+<!-- Vercel Analytics - site HTML simple -->
+<script>
+  window.va = window.va || function () {
+    (window.vaq = window.vaq || []).push(arguments);
+  };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+
+<!-- Google Analytics - dl.moodia.xyz -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZJRZD1GY8M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZJRZD1GY8M');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
@@ -8,7 +25,9 @@
 
 <meta name="description"
 content="Téléchargez la version officielle de Moodia pour Windows. Installation sécurisée, mises à jour automatiques et confidentialité renforcée.">
-
+<link rel="icon"
+      type="image/png"
+      href="https://drive.google.com/uc?export=view&id=1krjOYej9OIeSap4IPrNxcT4Cg2Sohq2U">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -356,8 +375,9 @@ body{
         <div class="download">
 
             <a
-            href="https://github.com/editionhorizonpositif-cpu/moodia-download/releases/download/v1.0.0/Moodia_Setup_1.0.0.exe"
-            class="download-btn">
+  href="https://github.com/editionhorizonpositif-cpu/moodia-download/releases/download/v1.0.0/Moodia_Setup_1.0.0.exe"
+  class="download-btn"
+  onclick="trackMoodiaDownload('windows', '1.0.0', 'Moodia_Setup_1.0.0.exe')">
 
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
                     <path d="M12 4V16" stroke="white" stroke-width="2"/>
@@ -462,6 +482,25 @@ body{
     </div>
 
 </div>
+    <script>
+function trackMoodiaDownload(platform, version, fileName) {
+  if (typeof gtag === 'function') {
+    gtag('event', 'download_moodia', {
+      platform: platform,
+      version: version,
+      file_name: fileName
+    });
+  }
+
+  if (window.va) {
+    window.va('event', 'download_moodia', {
+      platform: platform,
+      version: version,
+      file_name: fileName
+    });
+  }
+}
+</script>
 
 </body>
 </html>
